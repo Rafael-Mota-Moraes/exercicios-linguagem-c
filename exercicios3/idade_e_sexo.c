@@ -17,7 +17,7 @@ int main()
     {
       printf("Pode se aposentar");
     }
-    else if (sexo == 'F' && idade > 65)
+    else if (sexo == 'F' || idade > 65)
     {
       printf("Pode se aposentar");
     }
