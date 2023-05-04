@@ -18,7 +18,7 @@ int main()
 
   if (a == 0)
   {
-    if (a == 0)
+    if (b == 0)
     {
       printf("Sem resposta, (não é uma equação)");
     }
