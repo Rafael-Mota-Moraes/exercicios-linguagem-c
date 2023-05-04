@@ -9,7 +9,7 @@ int main()
   scanf("%d", &idade);
 
   printf("Digite o sexo: (M ou F) ");
-  scanf("%c", &sexo);
+  scanf(" %c", &sexo);
 
   if (sexo == 'M' || sexo == 'F')
   {
