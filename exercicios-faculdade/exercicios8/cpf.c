@@ -5,7 +5,6 @@ int main()
     char cpf[15];
     int i, local_digito;
     int digitos[11];
-    int multiplicador;
     int soma;
 
     printf("Digite o CPF (formato: XXX.XXX.XXX-XX): ");
@@ -18,7 +17,7 @@ int main()
         {
             if (i != 14)
             {
-                printf("CPF inválido!\n");
+                printf("Tamanho do CPF inválido!\n");
                 return 0;
             }
             break;
@@ -28,7 +27,7 @@ int main()
     // Verifica se os caracteres nos índices corretos são pontos ou traço
     if (cpf[3] != '.' || cpf[7] != '.' || cpf[11] != '-')
     {
-        printf("CPF inválido!\n");
+        printf("CPF em formato inválido!\n");
         return 0;
     }
 
@@ -59,13 +58,16 @@ int main()
 
     // Verifica o primeiro dígito verificador
     int resto = 0;
+    int multiplicador;
     multiplicador = 10;
     soma = 0;
+    
     for (i = 0; i < 9; i++)
     {
         soma += digitos[i] * multiplicador;
         multiplicador--;
     }
+
     resto = soma % 11;
     if (resto < 2)
     {
@@ -111,6 +113,8 @@ int main()
             return 0;
         }
     }
+
+    // CASO ELE CHEGUE AQUI, JÁ FORAM CHECADAS TODAS AS POSSIBILIDADES DE INVALIDEZ DO CPF.
 
     printf("CPF válido!\n");
     return 0;
