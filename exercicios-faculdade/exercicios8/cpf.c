@@ -1,3 +1,5 @@
+// Trabalho Bruno e Rafael
+
 #include <stdio.h>
 
 int main()
