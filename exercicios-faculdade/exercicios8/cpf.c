@@ -7,15 +7,15 @@ int main()
     int digitos[11];
     int soma;
 
-    printf("Digite o CPF (formato: XXX.XXX.XXX-XX): ");
+    printf("Digite o CPF (formato: XXX.XXX.XXX-XX ou XXXXXXXXXXX): ");
     scanf("%14s", cpf);
 
-    // Verifica se o CPF possui 14 caracteres (com pontos e traço)
+    // Verifica se o CPF possui 11 ou 14 caracteres (com pontos e traço)
     for (i = 0; i < 14; i++)
     {
         if (cpf[i] == '\0')
         {
-            if (i != 14)
+            if (i != 11 && i != 14)
             {
                 printf("Tamanho do CPF inválido!\n");
                 return 0;
@@ -25,7 +25,7 @@ int main()
     }
 
     // Verifica se os caracteres nos índices corretos são pontos ou traço
-    if (cpf[3] != '.' || cpf[7] != '.' || cpf[11] != '-')
+    if ((cpf[3] != '.' || cpf[7] != '.' || cpf[11] != '-') && i == 14)
     {
         printf("CPF em formato inválido!\n");
         return 0;
@@ -43,6 +43,7 @@ int main()
     }
 
     // Verifica se todos os dígitos são iguais (CPF inválido)
+    // Por algum motivo o algoritmo valida sequências como cpf's válidos
     for (i = 1; i < 11; i++)
     {
         if (digitos[i] != digitos[0])
@@ -61,7 +62,7 @@ int main()
     int multiplicador;
     multiplicador = 10;
     soma = 0;
-    
+
     for (i = 0; i < 9; i++)
     {
         soma += digitos[i] * multiplicador;
