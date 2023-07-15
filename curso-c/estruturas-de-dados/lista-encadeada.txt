@@ -1,0 +1,5 @@
+Lista encadeada / Lista Ligada / Linked Lista
+
+A lista encadeada possui alé m do seus valores, um ponteiro apontando para o próximo elemento
+
+Podemos inserir elementos no inicio ou no fim
