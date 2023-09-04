@@ -39,8 +39,6 @@ int main() {
 		printf("Voce digitou um numero invalido.");
 	}
 	
-	
-	
 	return 0;
 }
  
