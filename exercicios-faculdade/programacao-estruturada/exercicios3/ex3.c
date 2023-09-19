@@ -17,6 +17,7 @@ seguinte:
 
 programa
     inicio int numero = 0;
+diga("Digite um número: ");
 receba("%d", &numero);
 diga("Olá!\n");
 diga("Número: %d\n", numero);
